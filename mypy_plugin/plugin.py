@@ -34,7 +34,7 @@ class DjangoPlugin(Plugin):
     def __init__(self, options: Options) -> None:
         super().__init__(options)
 
-        self.context = DjangoContext("project.settings")
+        self.context = DjangoContext("sample_project.settings")
 
     def get_base_class_hook(
         self, fullname: str

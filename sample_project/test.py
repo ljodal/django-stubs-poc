@@ -1,5 +1,5 @@
-from project.app1.models import ModelA
-from project.app2.models import ModelB
+from .app1.models import ModelA
+from .app2.models import ModelB
 
 
 def test_something() -> None:
