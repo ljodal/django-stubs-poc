@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "django-stubs-poc"
+version = "0.1.0"
+description = ""
+authors = ["Sigurd Ljødal <544451+ljodal@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "project"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.1.3"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.5.1"
+django-stubs = "^4.2.3"
+
+
+[tool.poetry.group.lsp.dependencies]
+python-lsp-server = "^1.7.4"
+python-lsp-black = "^1.3.0"
+pyls-isort = "^0.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+python_version = "3.10"
+strict_optional = true
+ignore_missing_imports = true
+follow_imports = "normal"
+allow_untyped_globals = true
+# plugins = ["mypy_django_plugin.main", "pydantic.mypy"]
+plugins = ["project.mypy"]
+show_error_codes = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+namespace_packages = true
+explicit_package_bases = true
